@@ -59,6 +59,8 @@ namespace CalculatorApp
             
             result = firstNum / secondNum; break;
         }
+        lblHistory.Text = firstNum + " " + operation + " " + secondNum + " =";
+
 
         txtDisplay.Text = result.ToString();
         showingResult = true;
@@ -66,7 +68,8 @@ namespace CalculatorApp
       
       catch
       {
-        txtDisplay.Text = "Can't divide by zero";
+        lblHistory.Text = firstNum + " " + operation + " " + secondNum + " =";
+        txtDisplay.Text = "Error";
         operation = "";
         waitingForSecond = false;
         showingResult = true;
@@ -81,6 +84,7 @@ namespace CalculatorApp
       operation = "";
       txtDisplay.Text = "0";
       waitingForSecond = false;
+      lblHistory.Text = "";
     }
 
     private void btnDecimal_Click(object sender, EventArgs e)
