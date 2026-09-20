@@ -5,7 +5,7 @@ namespace CalculatorApp
   partial class Form1
   {
     private System.ComponentModel.IContainer component = null;
-
+    private Label lblHistory = null!;
     private Label lblTitle = null;
     private Label lblSubtitle = null;
     private TextBox txtDisplay = null;
@@ -85,8 +85,20 @@ namespace CalculatorApp
         ReadOnly = true,
         BackColor = Color.FromArgb(230, 240, 250),
         BorderStyle = BorderStyle.FixedSingle,
-        Location = new Point(20, 85),
+        Location = new Point(20, 105),
         Size = new Size (400, 90)
+      };
+
+      lblHistory = new Label
+      {
+        Name = "lblHistory",
+        Text = "",
+        Font = new Font("Segoe UI", 12F),
+        ForeColor = Color.FromArgb(120, 120, 120),
+        TextAlign = ContentAlignment.MiddleRight,
+        AutoSize = false,
+        Location = new Point(20, 80),
+        Size = new Size(395, 24)
       };
 
       const int x0 = 20, y0 = 190, w = 95, h = 80, gap = 8;
@@ -133,7 +145,7 @@ namespace CalculatorApp
 
       this.Controls.AddRange(new Control[]
       {
-        lblTitle, lblSubtitle, txtDisplay,
+        lblTitle, lblSubtitle, txtDisplay, lblHistory,
         btn7, btn8, btn9, Divide,
         btn4, btn5, btn6, Multiply,
         btn1, btn2, btn3, Minus,
